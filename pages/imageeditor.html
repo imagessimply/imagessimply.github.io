@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SimplyImage - Every Image Tool You Need</title>
+    <link rel="icon" href="../assets/icons/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SimplyImage - Image Tools | Resize | Crop | Editor">
+    <meta name="keywords" content="Image Resizer, Image Cropper, Image Editor, Image Filters, Image Compress">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/animate.css"> <!-- Resource style -->
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+        html, body {
+            height: 80%;
+            margin: 0;
+        }
+        #tui-image-editor-container{
+            margin-top: 90px;
+        }
+        .tui-image-editor-container .tui-image-editor-controls{
+            background: white !important;
+        }
+        .tui-image-editor-main-container{
+            border: 0px !important;
+        }
+        .tui-image-editor-container .tui-image-editor-help-menu.bottom, .tui-image-editor-controls-logo{
+            visibility: hidden !important;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/animate.css"> <!-- Resource style -->
+    <link type="text/css" href="https://uicdn.toast.com/tui-color-picker/v2.2.6/tui-color-picker.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.css">
+    
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="wrapper-">
+        <!-- Navbar Section -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">simplyimages</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto navbar-right">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./imageresizer.html">Resize Image</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./imageeditor.html">Edit Images</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./cropper.html">Crop Images</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./rotateimage.html">Flip & Rotate Images</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./watermark.html">Water mark Images</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+         
+    </div>
+           <!-- <div class="container-fluid2"> -->
+            <div id="tui-image-editor-container"></div>
+            <!-- </div>  --> 
+    <div class="footer-sm mt-5">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+              <a class="footer-logo" href="../index.html">simplyimages</a>
+            </div>
+            <div class="col-md-4">
+              <h6>&copy; SimplyImage 2023 Rights Reserved</h6>
+            </div>
+            <div class="col-md-4">
+              <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Linkedin</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.0/fabric.js"></script>
+        <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js"></script>
+        <script type="text/javascript" src="https://uicdn.toast.com/tui-color-picker/v2.2.6/tui-color-picker.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+        <script src="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.js"></script>        
+        <script>
+            var whiteTheme = {
+  'common.bi.image': 'https://uicdn.toast.com/toastui/img/tui-image-editor-bi.png',
+  'common.bisize.width': '251px',
+  'common.bisize.height': '21px',  
+  'common.backgroundColor': '#fff',
+  'common.border': '1px solid #c1c1c1',
+
+  // header
+  'header.backgroundImage': 'none',
+  'header.backgroundColor': 'transparent',
+  'header.border': '0px',
+
+  // load button
+  'loadButton.backgroundColor': '#fff',
+  'loadButton.border': '1px solid #ddd',
+  'loadButton.color': '#222',
+  'loadButton.fontFamily': "'Noto Sans', sans-serif",
+  'loadButton.fontSize': '12px',
+
+  // download button
+  'downloadButton.backgroundColor': '#fdba3b',
+  'downloadButton.border': '1px solid #fdba3b',
+  'downloadButton.color': '#fff',
+  'downloadButton.fontFamily': "'Noto Sans', sans-serif",
+  'downloadButton.fontSize': '12px',
+
+  // main icons
+  'menu.normalIcon.color': '#8a8a8a',
+  'menu.activeIcon.color': '#555555',
+  'menu.disabledIcon.color': '#434343',
+  'menu.hoverIcon.color': '#e9e9e9',
+  'menu.iconSize.width': '24px',
+  'menu.iconSize.height': '24px',
+
+  // submenu icons
+  'submenu.normalIcon.color': '#8a8a8a',
+  'submenu.activeIcon.color': '#555555',
+  'submenu.iconSize.width': '32px',
+  'submenu.iconSize.height': '32px',
+
+  // submenu primary color
+  'submenu.backgroundColor': 'transparent',
+  'submenu.partition.color': '#e5e5e5',
+
+  // submenu labels
+  'submenu.normalLabel.color': '#858585',
+  'submenu.normalLabel.fontWeight': 'normal',
+  'submenu.activeLabel.color': '#000',
+  'submenu.activeLabel.fontWeight': 'normal',
+
+  // checkbox style
+  'checkbox.border': '1px solid #ccc',
+  'checkbox.backgroundColor': '#fff',
+
+  // rango style
+  'range.pointer.color': '#333',
+  'range.bar.color': '#ccc',
+  'range.subbar.color': '#606060',
+
+  'range.disabledPointer.color': '#d3d3d3',
+  'range.disabledBar.color': 'rgba(85,85,85,0.06)',
+  'range.disabledSubbar.color': 'rgba(51,51,51,0.2)',
+
+  'range.value.color': '#000',
+  'range.value.fontWeight': 'normal',
+  'range.value.fontSize': '11px',
+  'range.value.border': '0',
+  'range.value.backgroundColor': '#f5f5f5',
+  'range.title.color': '#000',
+  'range.title.fontWeight': 'lighter',
+
+  // colorpicker style
+  'colorpicker.button.border': '0px',
+  'colorpicker.title.color': '#000',
+};
+         // Image editor
+         var imageEditor = new tui.ImageEditor('#tui-image-editor-container', {
+             includeUI: {
+                 loadImage: {
+                     path: '../assets/images/dog-8198719_1920.jpg',
+                     name: 'SampleImage'
+                 },                 
+                 theme: whiteTheme,
+                 initMenu: 'filter',
+                 menuBarPosition: 'right',
+                
+             },
+             cssMaxWidth: 700,
+             cssMaxHeight: 500,
+             usageStatistics: false
+         });
+         window.onresize = function() {
+             imageEditor.ui.resizeEditor();
+         }
+        </script>
+</body>
+
+</html>

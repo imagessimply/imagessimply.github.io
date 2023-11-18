@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SimplyImage - Every Image Tool You Need</title>
+  <link rel="icon" href="../assets/icons/favicon.png" type="image/png" sizes="16x16">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="SimplyImage - Image Tools | Resize | Crop | Editor">
+  <meta name="keywords" content="Image Resizer, Image Cropper, Image Editor, Image Filters, Image Compress">
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/animate.css"> <!-- Resource style -->
+  <link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" />
+  <style>
+    .cropper-modal, .cropper-line, .cropper-view-box, .cropper-point{
+		background-color: transparent;
+		outline-color: transparent;
+	  }
+	  .cropper-center{
+		display: none;
+	  }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container container-s">
+        <a class="navbar-brand" href="../index.html">simplyimages</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto navbar-right">
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./imageresizer.html">Resize Image</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./imageeditor.html">Edit Images</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./cropper.html">Crop Images</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./rotateimage.html">Flip & Rotate Images</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./watermark.html">Water mark Images</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav><!-- Navbar End -->
+
+
+    <main id="main" class="main container container-s">
+      <section class="row outer-wrapper">
+        <div class="col-md-5 col-xs-12 col-sm-12 g-0">
+          <div class="head-toggle">
+            <label id="tab1">By Dimension</label>
+            &nbsp; | &nbsp; <label id="tab2">As Percantage</label>
+          </div>
+          <div id="tab1Content" class="active tab dimension">
+            <div class="row image-dimension">
+              <label class="col-md-6">
+                Width
+                <input type="text" placeholder="320 e.g" id="txtWidth">
+              </label>
+              <label class="col-md-6">
+                Height
+                <input type="text" placeholder="320 e.g" id="txtHeight">
+              </label>
+            </div>
+            <div class="row ratio mt-3 mb-3">
+              <label class="col-md-6">
+                <input type="checkbox" checked="checked" id="chkAspectRatio">Aspect Ratio
+              </label>
+            </div>
+          </div>
+          <div id="tab2Content" class="tab percentage">
+            <div class="slider filter-info row">
+              <div class="name col-md-6 col-6">Percentage %</div>
+              <div class="value col-md-6 col-6" id="lblPercentage">50%</div>
+              <div class="col-md-12">
+                <input id="percentageSlider" type="range" min="1" max="100" value="50" class="slider-ele"></div>
+            </div>
+          </div>          
+          <button class="btn btn-primary" id="btnResize"> Resize Image</button>
+        </div>
+
+        <div class="col-md-7 col-12 col-sm-12 upload-wrapper">
+          <label class="share-wrapper">
+            <button type="button" class="btn btn-share">Download <img src="../assets/images/download.svg"></button>
+            
+          </label>
+          <div id="dragArea">
+            <img src="../assets/images/upload-placeholder.png" alt="upload-images" id="uploadedImage">
+          </div>
+          <input type="file" id="fileInput" class="file-input" />
+        </div>
+        <img id="outputImage" />
+      </section>
+    </main>
+   
+</div>
+<div class="footer-sm mt-5">
+  <div class="container container-s">
+    <div class="row">
+      <div class="col-md-4">
+        <a class="footer-logo" href="../index.html">simplyimages</a>
+      </div>
+      <div class="col-md-4">
+        <h6>&copy; SimplyImage 2023 Rights Reserved</h6>
+      </div>
+      <div class="col-md-4">
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Linkedin</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Jquery and Js Plugins -->
+    <script type="text/javascript" src="../assets/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="../assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.js"></script>
+    <script type="text/javascript" src="../assets/js/resize.js"></script>
+</body>
+
+</html>
