@@ -77,6 +77,9 @@ function selectTab(tabIndex, e) {
   document.querySelectorAll(".tab").forEach((e) => {
     e.classList.remove("active");
   });
+  document.querySelectorAll(".tabheading").forEach((e) => {
+    e.classList.remove("active");
+  });
   document.getElementById("tab" + tabIndex + "Content").style.display = "block";
   document.getElementById("tab" + tabIndex + "Content").classList.add("active");
   document.getElementById("tab" + tabIndex ).classList.add("active");
