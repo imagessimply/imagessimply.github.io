@@ -1824,7 +1824,9 @@ body {
 		text-align: center;
 	}
 	.head-toggle #tab1, .head-toggle #tab2{cursor: pointer;}
-	.head-toggle label{font-weight: bold; padding-left: 13px; color: #767474;	font-size: 16px;}
+	.head-toggle #tab2{padding-left: 0px;}
+	.head-toggle label{ padding-left: 13px; color: #767474;	font-size: 16px;}
+	.head-toggle label.active{font-weight: bold;}
 	.image-dimension label , .ratio label{font-size: 14px; ;}
 	.image-dimension .label-text{font-size: 14px;}
 	.image-dimension input{width:100%;
