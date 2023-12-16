@@ -1864,7 +1864,10 @@ body {
 		justify-content: right;}
 	.share-wrapper .btn{ margin-right: 10px;}
 	
-
+	#uploadedArea{position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);}
 	#uploadedImage {
 		width: 490px;
 		height: 335px;
